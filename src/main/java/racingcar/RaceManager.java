@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RaceManager {
-    List<Car> cars;
+    private List<Car> cars;
 
     public RaceManager() {
         this.cars = new ArrayList<>();
+    }
+
+    public List<Car> getCars() {
+        return this.cars;
     }
 
     public void addCar(String name) {
@@ -33,7 +37,6 @@ public class RaceManager {
                 winners.add(car.getName());
             }
         }
-
         return String.join(", ", winners);
     }
 }
