@@ -17,5 +17,13 @@ public class Application {
         for (String carSplit : carsSplit) {
             manager.addCar(carSplit);
         }
+
+        System.out.println("시도할 횟수는 몇 회인가요?");
+        String numRoundsRaw = Console.readLine();
+        final String NUM_ROUNDS_REGEX = "^[1-9][0-9]*$";
+        if (!Pattern.matches(NUM_ROUNDS_REGEX, numRoundsRaw)) {
+            throw new IllegalArgumentException("Invalid number of rounds.");
+        }
+        final int NUM_ROUNDS = Integer.parseInt(numRoundsRaw);
     }
 }
