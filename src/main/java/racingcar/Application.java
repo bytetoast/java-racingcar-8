@@ -30,5 +30,6 @@ public class Application {
         for (int round = 0; round < NUM_ROUNDS; round++) {
             manager.processRound();
         }
+        System.out.println("최종 우승자 : " + manager.getWinners());
     }
 }
