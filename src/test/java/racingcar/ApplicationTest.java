@@ -13,6 +13,11 @@ class ApplicationTest extends NsTest {
     private static final int MOVING_FORWARD = 4;
     private static final int STOP = 3;
 
+    @Override
+    public void runMain() {
+        Application.main(new String[]{});
+    }
+
     @Test
     void 기능_테스트() {
         assertRandomNumberInRangeTest(
@@ -30,11 +35,6 @@ class ApplicationTest extends NsTest {
             assertThatThrownBy(() -> runException("pobi,javaji", "1"))
                 .isInstanceOf(IllegalArgumentException.class)
         );
-    }
-
-    @Override
-    public void runMain() {
-        Application.main(new String[]{});
     }
 
     @Test

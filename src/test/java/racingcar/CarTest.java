@@ -7,6 +7,9 @@ import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.Test;
 
 public class CarTest extends NsTest {
+    @Override
+    public void runMain() { }
+
     @Test
     void moveTest() {
         final int MOVING_FORWARD = 4;
@@ -51,7 +54,4 @@ public class CarTest extends NsTest {
             MOVING_POBI, STOP_WONI, MOVING_JUN
         );
     }
-
-    @Override
-    public void runMain() { }
 }
