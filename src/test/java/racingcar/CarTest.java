@@ -12,35 +12,35 @@ public class CarTest extends NsTest {
 
     @Test
     void moveTest() {
-        final int MOVING_FORWARD = 4;
+        final int movingForward = 4;
         assertRandomNumberInRangeTest(
             () -> {
                 Car car = new Car("pobi");
                 car.move();
                 assertThat(output()).contains("pobi : -");
             },
-            MOVING_FORWARD
+            movingForward
         );
     }
 
     @Test
     void stopTest() {
-        final int STOP = 3;
+        final int stop = 3;
         assertRandomNumberInRangeTest(
             () -> {
                 Car car = new Car("pobi");
                 car.move();
                 assertThat(output()).contains("pobi :");
             },
-            STOP
+            stop
         );
     }
 
     @Test
     void threePlayersTest() {
-        final int MOVING_POBI = 6;
-        final int STOP_WONI = 2;
-        final int MOVING_JUN = 5;
+        final int movingPobi = 6;
+        final int stopWoni = 2;
+        final int movingJun = 5;
         assertRandomNumberInRangeTest(
             () -> {
                 Car carPobi = new Car("pobi");
@@ -51,7 +51,7 @@ public class CarTest extends NsTest {
                 carJun.move();
                 assertThat(output()).contains("pobi : -\nwoni : \njun : -");
             },
-            MOVING_POBI, STOP_WONI, MOVING_JUN
+            movingPobi, stopWoni, movingJun
         );
     }
 }

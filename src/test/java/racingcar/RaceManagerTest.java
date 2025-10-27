@@ -21,10 +21,10 @@ public class RaceManagerTest extends NsTest {
 
     @Test
     public void processRoundTest() {
-        final int STOP_POBI = 3;
-        final int MOVING_WONI = 4;
-        final int STOP_JUN = 1;
-        final int MOVING_JULY = 9;
+        final int stopPobi = 3;
+        final int movingWoni = 4;
+        final int stopJun = 1;
+        final int movingJuly = 9;
         assertRandomNumberInRangeTest(
             () -> {
                 RaceManager manager = new RaceManager();
@@ -35,18 +35,18 @@ public class RaceManagerTest extends NsTest {
                 manager.processRound();
                 assertThat(output()).contains("pobi : \nwoni : -\njun : \njuly : -");
             },
-            STOP_POBI, MOVING_WONI, STOP_JUN, MOVING_JULY
+            stopPobi, movingWoni, stopJun, movingJuly
         );
     }
 
     @Test
     public void getWinnersTest() {
-        final int STOP_POBI = 3;
-        final int STOP_WONI = 1;
-        final int MOVING_JUN = 4;
-        final int MOVING_JULY = 9;
-        final int STOP_REST = 2;
-        final int MOVING_WINNER = 5;
+        final int stopPobi = 3;
+        final int stopWoni = 1;
+        final int movingJun = 4;
+        final int movingJuly = 9;
+        final int stopRest = 2;
+        final int movingWinner = 5;
         assertRandomNumberInRangeTest(
             () -> {
                 RaceManager manager = new RaceManager();
@@ -58,16 +58,16 @@ public class RaceManagerTest extends NsTest {
                 manager.processRound();
                 assertThat(manager.getWinners()).contains("july");
             },
-            STOP_POBI, STOP_WONI, MOVING_JUN, MOVING_JULY, STOP_REST, STOP_REST, STOP_REST, MOVING_WINNER
+            stopPobi, stopWoni, movingJun, movingJuly, stopRest, stopRest, stopRest, movingWinner
         );
     }
 
     @Test
     public void getMultipleWinnersTest() {
-        final int STOP_POBI = 3;
-        final int STOP_WONI = 1;
-        final int MOVING_JUN = 4;
-        final int MOVING_JULY = 9;
+        final int stopPobi = 3;
+        final int stopWoni = 1;
+        final int movingJun = 4;
+        final int movingJuly = 9;
         assertRandomNumberInRangeTest(
             () -> {
                 RaceManager manager = new RaceManager();
@@ -78,7 +78,7 @@ public class RaceManagerTest extends NsTest {
                 manager.processRound();
                 assertThat(manager.getWinners()).contains("jun, july");
             },
-            STOP_POBI, STOP_WONI, MOVING_JUN, MOVING_JULY
+            stopPobi, stopWoni, movingJun, movingJuly
         );
     }
 }
