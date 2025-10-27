@@ -1,8 +1,9 @@
 package racingcar;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
-import camp.nextstep.edu.missionutils.test.NsTest;
 import static org.assertj.core.api.Assertions.assertThat;
+
+import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.Test;
 
 public class CarTest extends NsTest {
@@ -46,7 +47,8 @@ public class CarTest extends NsTest {
                 carWoni.move();
                 carJun.move();
                 assertThat(output()).contains("pobi : -\nwoni : \njun : -");
-            }, MOVING_POBI, STOP_WONI, MOVING_JUN
+            },
+            MOVING_POBI, STOP_WONI, MOVING_JUN
         );
     }
 
