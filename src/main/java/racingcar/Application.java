@@ -11,5 +11,11 @@ public class Application {
         if (!Pattern.matches(NAMES_REGEX, carsStringRaw)) {
             throw new IllegalArgumentException("Invalid car input.");
         }
+
+        RaceManager manager = new RaceManager();
+        String[] carsSplit = carsStringRaw.split(",");
+        for (String carSplit : carsSplit) {
+            manager.addCar(carSplit);
+        }
     }
 }
