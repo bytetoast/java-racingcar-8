@@ -7,7 +7,7 @@
 - [x] `Car` Class를 정의한다.
   - 자동차 이름과 전진 횟수를 변수로 갖는 `Car` Class를 정의한다.
   - `Car` Class 안에 조건에 따라 전진하는 `move` 메서드를 만든다.
-- [ ] `Car`를 관리하는 `RaceManager` Class를 정의한다.
+- [x] `Car`를 관리하는 `RaceManager` Class를 정의한다.
   - `Car`들의 리스트인 `cars` 변수를 갖는 `RaceManager` Class를 정의한다.
   - 자동차 이름을 받아 `cars`에 새로운 `Car`를 추가하는 `addCar` 메서드를 만든다.
   - 하나의 자동차 경주 라운드를 진행하는 `processRound` 메서드를 만든다.
