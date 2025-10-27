@@ -78,4 +78,20 @@ class ApplicationTest extends NsTest {
                 run(",wo1ni ,1jun", "12");
             });
     }
+
+    @Test
+    void zeroRoundsTest() {
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    run("pobi,woni,jun", "0");
+                });
+    }
+
+    @Test
+    void negativeNumRoundsTest() {
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    run("pobi1,wo1ni,1jun", "-3");
+                });
+    }
 }
