@@ -25,5 +25,10 @@ public class Application {
             throw new IllegalArgumentException("Invalid number of rounds.");
         }
         final int NUM_ROUNDS = Integer.parseInt(numRoundsRaw);
+
+        System.out.println("\n실행 결과");
+        for (int round = 0; round < NUM_ROUNDS; round++) {
+            manager.processRound();
+        }
     }
 }
