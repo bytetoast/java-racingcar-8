@@ -11,12 +11,12 @@ public class CarTest extends NsTest {
     void moveTest() {
         final int MOVING_FORWARD = 4;
         assertRandomNumberInRangeTest(
-                () -> {
-                    Car car = new Car("pobi");
-                    car.move();
-                    assertThat(output()).contains("pobi : -");
-                },
-                MOVING_FORWARD
+            () -> {
+                Car car = new Car("pobi");
+                car.move();
+                assertThat(output()).contains("pobi : -");
+            },
+            MOVING_FORWARD
         );
     }
 

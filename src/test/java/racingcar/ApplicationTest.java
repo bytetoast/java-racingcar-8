@@ -42,7 +42,8 @@ class ApplicationTest extends NsTest {
         assertThrows(IllegalArgumentException.class, 
             () -> {
                 run("pobi,woni,", "3");
-            });
+            }
+        );
     }
 
     @Test
@@ -50,7 +51,8 @@ class ApplicationTest extends NsTest {
         assertThrows(IllegalArgumentException.class, 
             () -> {
                 run("pobi,woni,junjun", "5");
-            });
+            }
+        );
     }
 
     @Test
@@ -58,7 +60,8 @@ class ApplicationTest extends NsTest {
         assertThrows(IllegalArgumentException.class, 
             () -> {
                 run("pobi1:wo1ni,1jun", "10"); // .도
-            });
+            }
+        );
     }
 
     @Test
@@ -66,7 +69,8 @@ class ApplicationTest extends NsTest {
         assertThrows(IllegalArgumentException.class, 
             () -> {
                 run("pobi1 ,wo1ni ,1jun", "9");
-            });
+            }
+        );
     }
 
     @Test
@@ -74,22 +78,25 @@ class ApplicationTest extends NsTest {
         assertThrows(IllegalArgumentException.class, 
             () -> {
                 run(",wo1ni ,1jun", "12");
-            });
+            }
+        );
     }
 
     @Test
     void zeroRoundsTest() {
         assertThrows(IllegalArgumentException.class,
-                () -> {
-                    run("pobi,woni,jun", "0");
-                });
+            () -> {
+                run("pobi,woni,jun", "0");
+            }
+        );
     }
 
     @Test
     void negativeNumRoundsTest() {
         assertThrows(IllegalArgumentException.class,
-                () -> {
-                    run("pobi1,wo1ni,1jun", "-3");
-                });
+            () -> {
+                run("pobi1,wo1ni,1jun", "-3");
+            }
+        );
     }
 }
