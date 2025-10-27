@@ -1,6 +1,9 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
@@ -34,5 +37,45 @@ class ApplicationTest extends NsTest {
     @Override
     public void runMain() {
         Application.main(new String[]{});
+    }
+
+    @Test
+    void missingLastItemTest() {
+        assertThrows(IllegalArgumentException.class, 
+            () -> {
+                run("pobi,woni,", "3");
+            });
+    }
+
+    @Test
+    void nameLongerThanFiveTest() {
+        assertThrows(IllegalArgumentException.class, 
+            () -> {
+                run("pobi,woni,junjun", "5");
+            });
+    }
+
+    @Test
+    void namesInWrongFormatTest() {
+        assertThrows(IllegalArgumentException.class, 
+            () -> {
+                run("pobi1:wo1ni,1jun", "10"); // .도
+            });
+    }
+
+    @Test
+    void spacesBetweenNamesTest() {
+        assertThrows(IllegalArgumentException.class, 
+            () -> {
+                run("pobi1 ,wo1ni ,1jun", "9");
+            });
+    }
+
+    @Test
+    void missingFirstItemTest() {
+        assertThrows(IllegalArgumentException.class, 
+            () -> {
+                run(",wo1ni ,1jun", "12");
+            });
     }
 }
