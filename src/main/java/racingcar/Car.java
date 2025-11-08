@@ -1,6 +1,6 @@
 package racingcar;
 
-import camp.nextstep.edu.missionutils.Randoms;
+import java.util.Random;
 
 public class Car {
     private String name;
@@ -20,7 +20,8 @@ public class Car {
     }
 
     public void move() {
-        int randomVal = Randoms.pickNumberInRange(0, 9);
+        Random random = new Random();
+        int randomVal = random.nextInt(10);
         if (randomVal >= 4) {
             this.position++;
         }
